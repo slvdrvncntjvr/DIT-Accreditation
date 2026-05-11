@@ -1,0 +1,93 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout title="Teaching and Learning">
+  <!-- Page header -->
+  <div class="mb-8">
+    <span class="badge badge-gold mb-3">Pillar</span>
+    <h1 class="text-3xl font-bold text-[var(--neutral-900)] md:text-4xl tracking-tight">Teaching and Learning</h1>
+    <p class="mt-3 text-base text-[var(--text-secondary)] max-w-3xl">
+      The BSIT program delivers outcomes-based instruction grounded in applied projects, 
+      industry relevance, and responsive assessment. This section presents how we teach, 
+      how we measure, and how students learn.
+    </p>
+  </div>
+
+  <div class="divider-network"><span class="node"></span></div>
+
+  <!-- Instruction approach -->
+  <section class="grid gap-4 md:grid-cols-2" data-reveal="up">
+    <article class="card card-accent-gold p-6">
+      <h2 class="text-lg font-semibold text-[var(--neutral-900)]">Instructional Approach</h2>
+      <ul class="mt-3 space-y-2 text-sm text-[var(--text-secondary)]">
+        <li class="flex gap-2"><span class="text-[var(--gold-500)]">●</span> Project-based and problem-based learning across all year levels</li>
+        <li class="flex gap-2"><span class="text-[var(--gold-500)]">●</span> Industry-aligned tools and technologies in lab courses</li>
+        <li class="flex gap-2"><span class="text-[var(--gold-500)]">●</span> Flexible delivery: face-to-face, blended, and synchronous online</li>
+        <li class="flex gap-2"><span class="text-[var(--gold-500)]">●</span> Capstone integration with real community/organizational partners</li>
+      </ul>
+    </article>
+
+    <article class="card p-6">
+      <h2 class="text-lg font-semibold text-[var(--neutral-900)]">Assessment & Feedback</h2>
+      <ul class="mt-3 space-y-2 text-sm text-[var(--text-secondary)]">
+        <li class="flex gap-2"><span class="text-[var(--gold-500)]">●</span> Rubric-based evaluation tied to program outcomes</li>
+        <li class="flex gap-2"><span class="text-[var(--gold-500)]">●</span> Portfolio-based evidence for skills courses</li>
+        <li class="flex gap-2"><span class="text-[var(--gold-500)]">●</span> Peer review and code review practices in programming courses</li>
+        <li class="flex gap-2"><span class="text-[var(--gold-500)]">●</span> Continuous improvement informed by student evaluation data</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- Impact of instruction -->
+  <section class="mt-8" data-reveal="up">
+    <h2 class="section-heading">Impact of Instruction</h2>
+    <p class="section-subheading">Evidence that our teaching produces measurable outcomes.</p>
+    <div class="mt-5 grid gap-4 sm:grid-cols-3">
+      <div class="card p-5 text-center">
+        <p class="stat-value">92%</p>
+        <p class="stat-label">Retention Rate</p>
+      </div>
+      <div class="card p-5 text-center">
+        <p class="stat-value">85%</p>
+        <p class="stat-label">Employability within 1 year</p>
+      </div>
+      <div class="card p-5 text-center">
+        <p class="stat-value">4.2/5</p>
+        <p class="stat-label">Student Satisfaction</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Class in action -->
+  <section class="mt-8" data-reveal="up">
+    <h2 class="section-heading">Our Classes in Action</h2>
+    <p class="section-subheading">Real scenes from instruction delivery — labs, workshops, and project sessions.</p>
+    <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="card overflow-hidden">
+        <div class="aspect-video bg-[var(--neutral-200)] flex items-center justify-center">
+          <span class="text-xs text-[var(--text-muted)]">Photo placeholder</span>
+        </div>
+        <div class="p-4">
+          <p class="text-sm font-medium text-[var(--neutral-900)]">Systems Development Lab</p>
+        </div>
+      </div>
+      <div class="card overflow-hidden">
+        <div class="aspect-video bg-[var(--neutral-200)] flex items-center justify-center">
+          <span class="text-xs text-[var(--text-muted)]">Photo placeholder</span>
+        </div>
+        <div class="p-4">
+          <p class="text-sm font-medium text-[var(--neutral-900)]">Capstone Defense Presentations</p>
+        </div>
+      </div>
+      <div class="card overflow-hidden">
+        <div class="aspect-video bg-[var(--neutral-200)] flex items-center justify-center">
+          <span class="text-xs text-[var(--text-muted)]">Photo placeholder</span>
+        </div>
+        <div class="p-4">
+          <p class="text-sm font-medium text-[var(--neutral-900)]">Workshop: Cloud Deployment</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

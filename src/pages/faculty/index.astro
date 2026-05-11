@@ -1,0 +1,43 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { facultyMembers } from "../../data/content";
+---
+
+<SiteLayout title="Faculty Directory">
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold text-[var(--neutral-900)] md:text-4xl tracking-tight">Faculty</h1>
+    <p class="mt-3 text-base text-[var(--text-secondary)] max-w-3xl">
+      The people who drive instruction, research, and quality assurance in the BSIT program.
+    </p>
+  </div>
+
+  <div class="divider-network"><span class="node"></span></div>
+
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      facultyMembers.map((member) => (
+        <a href={`/faculty/${member.slug}`} class="card-interactive p-6 no-underline group">
+          <!-- Avatar -->
+          <div class="w-14 h-14 rounded-full bg-[var(--maroon-100)] flex items-center justify-center mb-4">
+            <span class="text-lg font-bold text-[var(--maroon-600)]">
+              {member.name.split(' ').filter(n => n.length > 2).slice(0, 2).map(n => n[0]).join('')}
+            </span>
+          </div>
+          
+          <h2 class="text-base font-semibold text-[var(--neutral-900)] group-hover:text-[var(--brand)] transition-colors">
+            {member.name}
+          </h2>
+          <p class="mt-1 text-sm text-[var(--gold-600)] font-medium">{member.role}</p>
+          <p class="mt-2 text-sm text-[var(--text-secondary)]">{member.expertise}</p>
+          
+          <span class="mt-4 inline-flex items-center gap-1 text-xs font-medium text-[var(--brand)]">
+            View profile
+            <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </a>
+      ))
+    }
+  </div>
+</SiteLayout>

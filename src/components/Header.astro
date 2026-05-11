@@ -1,0 +1,102 @@
+---
+import { navLinks } from "../data/site";
+---
+
+<header id="site-header" class="sticky top-0 z-50 border-b border-transparent bg-white/80 backdrop-blur-lg transition-all duration-300">
+  <div class="container-shell">
+    <!-- Top bar: branding -->
+    <div class="flex items-center justify-between gap-4 py-3">
+      <a href="/" class="flex items-center gap-3 no-underline group" transition:name="site-logo">
+        <!-- DIT Logo mark — gold circle with maroon inner -->
+        <div class="relative flex h-9 w-9 items-center justify-center rounded-full bg-[var(--maroon-600)] ring-2 ring-[var(--gold-500)] group-hover:ring-[var(--gold-400)] transition-all">
+          <span class="text-xs font-bold text-white leading-none">DIT</span>
+          <div class="absolute inset-0 rounded-full bg-[var(--gold-500)] opacity-0 group-hover:opacity-20 transition-opacity"></div>
+        </div>
+        <div class="hidden sm:block">
+          <p class="text-sm font-semibold text-[var(--neutral-900)] leading-tight group-hover:text-[var(--maroon-600)] transition-colors">
+            Department of Information Technology
+          </p>
+          <p class="text-xs text-[var(--text-muted)] leading-tight">
+            BSIT Accreditation
+          </p>
+        </div>
+        <span class="sm:hidden text-sm font-semibold text-[var(--neutral-900)]">DIT BSIT</span>
+      </a>
+
+      <!-- Mobile menu toggle -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden flex items-center gap-2 rounded-lg border border-[var(--line)] px-3 py-2 text-sm font-medium text-[var(--neutral-700)] hover:bg-[var(--neutral-100)] hover:border-[var(--neutral-400)] transition-all"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        Menu
+      </button>
+    </div>
+
+    <!-- Desktop navigation -->
+    <nav class="hidden md:flex items-center gap-0.5 pb-3 overflow-x-auto" aria-label="Main navigation">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="shrink-0 rounded-md px-3 py-1.5 text-[0.8125rem] font-medium text-[var(--neutral-600)] no-underline hover:text-[var(--maroon-600)] hover:bg-[var(--maroon-50)] active:scale-95 transition-all"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+
+  <!-- Mobile navigation panel -->
+  <nav
+    id="mobile-nav"
+    class="md:hidden hidden border-t border-[var(--line)] bg-white/95 backdrop-blur-lg"
+    aria-label="Mobile navigation"
+  >
+    <div class="container-shell py-3 grid gap-0.5">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="rounded-md px-3 py-2.5 text-sm font-medium text-[var(--neutral-700)] no-underline hover:text-[var(--maroon-600)] hover:bg-[var(--maroon-50)] active:scale-[0.98] transition-all"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<script>
+  function initHeader() {
+    const header = document.getElementById("site-header");
+    const btn = document.getElementById("mobile-menu-btn");
+    const nav = document.getElementById("mobile-nav");
+
+    // Scroll behavior
+    let lastScroll = 0;
+    window.addEventListener("scroll", () => {
+      if (!header) return;
+      const scrolled = window.scrollY > 20;
+      header.classList.toggle("border-[var(--line)]", scrolled);
+      header.classList.toggle("border-transparent", !scrolled);
+      header.classList.toggle("shadow-sm", scrolled);
+    }, { passive: true });
+
+    // Mobile menu
+    btn?.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!expanded));
+      nav?.classList.toggle("hidden");
+    });
+  }
+
+  initHeader();
+  document.addEventListener("astro:after-swap", initHeader);
+</script>

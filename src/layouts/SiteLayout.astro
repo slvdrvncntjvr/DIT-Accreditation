@@ -1,0 +1,121 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { siteMeta } from "../data/site";
+import { ClientRouter } from "astro:transitions";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = siteMeta.description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <ClientRouter />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <Header />
+    <main id="main-content" class="container-shell py-8">
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- Scroll-reveal observer -->
+    <script>
+      function initReveal() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("revealed");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
+        );
+
+        document.querySelectorAll("[data-reveal]").forEach((el) => {
+          observer.observe(el);
+        });
+      }
+
+      // Run on initial load and after view transitions
+      initReveal();
+      document.addEventListener("astro:after-swap", initReveal);
+    </script>
+
+    <!-- Animated counters -->
+    <script>
+      function initCounters() {
+        const counterObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const el = entry.target as HTMLElement;
+                const target = el.dataset.count || el.textContent || "0";
+                animateCounter(el, target);
+                counterObserver.unobserve(el);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        document.querySelectorAll("[data-count]").forEach((el) => {
+          counterObserver.observe(el);
+        });
+      }
+
+      function animateCounter(el: HTMLElement, target: string) {
+        // Extract number and suffix
+        const match = target.match(/^([\d,.]+)(.*)$/);
+        if (!match) { el.textContent = target; return; }
+        
+        const numStr = match[1].replace(/,/g, "");
+        const suffix = match[2] || "";
+        const end = parseFloat(numStr);
+        const duration = 1600;
+        const start = performance.now();
+
+        function tick(now: number) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease out cubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(eased * end);
+          
+          if (end >= 1000) {
+            el.textContent = current.toLocaleString() + suffix;
+          } else {
+            el.textContent = current + suffix;
+          }
+          
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            el.textContent = target;
+          }
+        }
+        
+        requestAnimationFrame(tick);
+      }
+
+      initCounters();
+      document.addEventListener("astro:after-swap", initCounters);
+    </script>
+  </body>
+</html>

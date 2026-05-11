@@ -1,0 +1,267 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { externalLinks } from "../data/embeds";
+---
+
+<SiteLayout title="DIT BSIT Accreditation">
+  <!-- ===== HERO ===== -->
+  <section class="relative overflow-hidden rounded-2xl gradient-hero px-6 py-14 md:px-12 md:py-20 glow-maroon">
+    <!-- Animated background layers -->
+    <div class="absolute inset-0 bg-dots"></div>
+    <div class="absolute inset-0 bg-grid opacity-50"></div>
+    <!-- Ambient glow orbs -->
+    <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[var(--gold-500)] opacity-[0.04] blur-[100px]" style="animation: heroGlow 6s ease-in-out infinite;"></div>
+    <div class="absolute bottom-[-30%] left-[-10%] w-[400px] h-[400px] rounded-full bg-[var(--maroon-500)] opacity-[0.08] blur-[80px]" style="animation: heroGlow 8s ease-in-out infinite 2s;"></div>
+    
+    <div class="relative hero-animate">
+      <span class="badge badge-gold">AACCUP Accreditation</span>
+      
+      <h1 class="mt-5 text-3xl font-extrabold text-white md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
+        Bachelor of Science in<br/>
+        <span class="text-gradient">Information Technology</span>
+      </h1>
+      
+      <p class="mt-5 max-w-2xl text-base text-white/75 md:text-lg leading-relaxed">
+        Building systems that solve real problems — from classrooms to communities.
+        This site presents our outcomes in instruction, research, extension, and compliance.
+      </p>
+
+      <!-- Stats row with animated counters -->
+      <div class="mt-10 flex flex-wrap gap-8 md:gap-12">
+        <div>
+          <p class="text-2xl md:text-4xl font-extrabold text-[var(--gold-400)]" data-count="1979">1979</p>
+          <p class="text-xs text-white/50 uppercase tracking-wider mt-1">Established</p>
+        </div>
+        <div>
+          <p class="text-2xl md:text-4xl font-extrabold text-[var(--gold-400)]" data-count="20+">0</p>
+          <p class="text-xs text-white/50 uppercase tracking-wider mt-1">Faculty</p>
+        </div>
+        <div>
+          <p class="text-2xl md:text-4xl font-extrabold text-[var(--gold-400)]" data-count="1,500+">0</p>
+          <p class="text-xs text-white/50 uppercase tracking-wider mt-1">Students</p>
+        </div>
+        <div>
+          <p class="text-2xl md:text-4xl font-extrabold text-white" data-count="Level III">Level III</p>
+          <p class="text-xs text-white/50 uppercase tracking-wider mt-1">AACCUP Status</p>
+        </div>
+      </div>
+
+      <!-- CTA buttons -->
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/compliance" class="btn-primary">
+          View Compliance Report
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/about-pup" class="btn-secondary">
+          About the Program
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <section data-reveal="up" class="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-[var(--line)] bg-white px-5 py-4">
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
+        <div class="h-9 w-9 rounded-full bg-[var(--maroon-600)] flex items-center justify-center shadow-sm">
+          <span class="text-[0.5rem] font-bold text-white">PUP</span>
+        </div>
+        <div class="h-9 w-9 rounded-full bg-[var(--neutral-100)] border border-[var(--line)] flex items-center justify-center">
+          <span class="text-[0.4rem] font-bold text-[var(--neutral-700)]">CCIS</span>
+        </div>
+        <div class="h-9 w-9 rounded-full bg-[var(--gold-50)] border border-[var(--gold-300)] flex items-center justify-center">
+          <span class="text-[0.4rem] font-bold text-[var(--gold-600)]">DIT</span>
+        </div>
+        <div class="h-9 w-9 rounded-full bg-[var(--neutral-100)] border border-[var(--line)] flex items-center justify-center">
+          <span class="text-[0.35rem] font-bold text-[var(--neutral-600)]">CHED</span>
+        </div>
+        <div class="h-9 w-9 rounded-full bg-[var(--neutral-100)] border border-[var(--line)] flex items-center justify-center">
+          <span class="text-[0.3rem] font-bold text-[var(--neutral-600)]">AACCUP</span>
+        </div>
+      </div>
+      <span class="text-xs text-[var(--text-muted)] hidden md:inline">Polytechnic University of the Philippines · College of Computer and Information Sciences</span>
+    </div>
+    <a href="#" class="text-xs font-medium text-[var(--brand)] no-underline hover:underline whitespace-nowrap">
+      Certificate of Authenticity →
+    </a>
+  </section>
+
+  <!-- ===== NETWORK DIVIDER ===== -->
+  <div class="divider-network" data-reveal="fade">
+    <span class="node"></span>
+  </div>
+
+  <!-- ===== BENTO GRID ===== -->
+  <section class="bento-grid" data-reveal="fade" data-stagger>
+    <!-- Large: Compliance (primary CTA for accreditors) -->
+    <a href="/compliance" class="card-interactive card-accent-maroon p-6 md:p-8 no-underline lg:col-span-7 flex flex-col justify-between min-h-[200px] group">
+      <div>
+        <span class="badge badge-maroon mb-3">Core Document</span>
+        <h2 class="text-xl md:text-2xl font-bold text-[var(--neutral-900)] group-hover:text-[var(--maroon-700)] transition-colors">Compliance Report</h2>
+        <p class="mt-2 text-sm text-[var(--text-secondary)] max-w-md">
+          Area-based evidence, documents, and narratives organized for review. All 10 areas with linked supporting files.
+        </p>
+      </div>
+      <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--brand)]">
+        View all areas
+        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </span>
+    </a>
+
+    <!-- Narrative Report -->
+    <a href="/narrative-report" class="card-interactive p-6 no-underline lg:col-span-5 flex flex-col justify-between min-h-[200px] group">
+      <div>
+        <span class="badge badge-maroon mb-3">Core Document</span>
+        <h2 class="text-lg font-semibold text-[var(--neutral-900)] group-hover:text-[var(--maroon-700)] transition-colors">Narrative Report</h2>
+        <p class="mt-2 text-sm text-[var(--text-secondary)]">
+          The program story from enrollment through graduate outcomes — instruction, research, partnerships.
+        </p>
+      </div>
+      <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--brand)]">
+        Read report
+        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <!-- Teaching & Learning -->
+    <a href="/teaching-learning" class="card-interactive card-accent-gold p-6 no-underline lg:col-span-4 group">
+      <div class="flex items-start justify-between">
+        <h2 class="text-lg font-semibold text-[var(--neutral-900)] group-hover:text-[var(--maroon-700)] transition-colors">Teaching & Learning</h2>
+        <div class="w-9 h-9 rounded-lg bg-[var(--gold-50)] flex items-center justify-center group-hover:scale-110 transition-transform">
+          <svg class="w-5 h-5 text-[var(--gold-500)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+          </svg>
+        </div>
+      </div>
+      <p class="mt-2 text-sm text-[var(--text-secondary)]">Outcomes-based instruction, assessment, and learner support.</p>
+    </a>
+
+    <!-- Research -->
+    <a href="/research" class="card-interactive card-accent-gold p-6 no-underline lg:col-span-4 group">
+      <div class="flex items-start justify-between">
+        <h2 class="text-lg font-semibold text-[var(--neutral-900)] group-hover:text-[var(--maroon-700)] transition-colors">Research</h2>
+        <div class="w-9 h-9 rounded-lg bg-[var(--gold-50)] flex items-center justify-center group-hover:scale-110 transition-transform">
+          <svg class="w-5 h-5 text-[var(--gold-500)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+          </svg>
+        </div>
+      </div>
+      <p class="mt-2 text-sm text-[var(--text-secondary)]">Projects, publications, competitions, and deployments.</p>
+    </a>
+
+    <!-- Extension -->
+    <a href="/extension-community" class="card-interactive card-accent-gold p-6 no-underline lg:col-span-4 group">
+      <div class="flex items-start justify-between">
+        <h2 class="text-lg font-semibold text-[var(--neutral-900)] group-hover:text-[var(--maroon-700)] transition-colors">Extension & Community</h2>
+        <div class="w-9 h-9 rounded-lg bg-[var(--gold-50)] flex items-center justify-center group-hover:scale-110 transition-transform">
+          <svg class="w-5 h-5 text-[var(--gold-500)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+          </svg>
+        </div>
+      </div>
+      <p class="mt-2 text-sm text-[var(--text-secondary)]">Community programs, partnerships, and digital capacity building.</p>
+    </a>
+
+    <!-- Internationalization -->
+    <a href="/internationalization" class="card-interactive p-6 no-underline lg:col-span-4 group">
+      <h2 class="text-lg font-semibold text-[var(--neutral-900)] group-hover:text-[var(--maroon-700)] transition-colors">Internationalization</h2>
+      <p class="mt-2 text-sm text-[var(--text-secondary)]">Cross-border collaborations, faculty mobility, and global engagements.</p>
+    </a>
+
+    <!-- Planning & QA -->
+    <a href="/planning-qa" class="card-interactive p-6 no-underline lg:col-span-4 group">
+      <h2 class="text-lg font-semibold text-[var(--neutral-900)] group-hover:text-[var(--maroon-700)] transition-colors">Planning & QA</h2>
+      <p class="mt-2 text-sm text-[var(--text-secondary)]">Continuous improvement, goals by year, and quality assurance processes.</p>
+    </a>
+
+    <!-- SDG Alignment -->
+    <a href="/sdg-alignment" class="card-interactive p-6 no-underline lg:col-span-4 group">
+      <h2 class="text-lg font-semibold text-[var(--neutral-900)] group-hover:text-[var(--maroon-700)] transition-colors">SDG Alignment</h2>
+      <p class="mt-2 text-sm text-[var(--text-secondary)]">UN SDG integration across instruction, research, and extension.</p>
+    </a>
+
+    <!-- Faculty — larger with avatars -->
+    <a href="/faculty" class="card-interactive p-6 no-underline lg:col-span-6 group">
+      <div class="flex items-start justify-between">
+        <div>
+          <h2 class="text-lg font-semibold text-[var(--neutral-900)] group-hover:text-[var(--maroon-700)] transition-colors">Faculty Profiles</h2>
+          <p class="mt-2 text-sm text-[var(--text-secondary)]">The people behind the program — expertise, research, and roles.</p>
+        </div>
+        <div class="flex -space-x-2">
+          <div class="w-9 h-9 rounded-full bg-[var(--maroon-100)] border-2 border-white flex items-center justify-center group-hover:scale-105 transition-transform">
+            <span class="text-[0.5rem] font-bold text-[var(--maroon-600)]">MS</span>
+          </div>
+          <div class="w-9 h-9 rounded-full bg-[var(--gold-100)] border-2 border-white flex items-center justify-center group-hover:scale-105 transition-transform" style="transition-delay: 50ms">
+            <span class="text-[0.5rem] font-bold text-[var(--gold-600)]">JR</span>
+          </div>
+          <div class="w-9 h-9 rounded-full bg-[var(--neutral-200)] border-2 border-white flex items-center justify-center group-hover:scale-105 transition-transform" style="transition-delay: 100ms">
+            <span class="text-[0.5rem] font-bold text-[var(--neutral-600)]">AG</span>
+          </div>
+          <div class="w-9 h-9 rounded-full bg-[var(--neutral-100)] border-2 border-white flex items-center justify-center text-[var(--text-muted)]">
+            <span class="text-[0.5rem] font-medium">+17</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Curriculum -->
+    <a href="/curriculum" class="card-interactive p-6 no-underline lg:col-span-6 group">
+      <h2 class="text-lg font-semibold text-[var(--neutral-900)] group-hover:text-[var(--maroon-700)] transition-colors">Curriculum</h2>
+      <p class="mt-2 text-sm text-[var(--text-secondary)]">From foundations through applied tracks to capstone — the full BSIT program design.</p>
+      <!-- Mini journey bar -->
+      <div class="mt-4 flex items-center gap-1">
+        <div class="h-1.5 flex-1 rounded-full bg-[var(--gold-500)]"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-[var(--gold-400)]"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-[var(--maroon-500)]"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-[var(--maroon-600)]"></div>
+      </div>
+      <div class="mt-1 flex justify-between text-[0.625rem] text-[var(--text-muted)]">
+        <span>Foundations</span>
+        <span>Applied</span>
+        <span>Capstone</span>
+        <span>Graduate</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ===== QUICK LINKS ===== -->
+  <div class="divider-network" data-reveal="fade">
+    <span class="node"></span>
+  </div>
+
+  <section data-reveal="up">
+    <h2 class="section-heading">Quick Links</h2>
+    <p class="section-subheading">Frequently accessed resources and portals.</p>
+    <div class="mt-5 grid gap-3 sm:grid-cols-2">
+      {
+        externalLinks.map((link) => (
+          <a href={link.href} class="card-interactive flex items-center justify-between px-5 py-4 no-underline group">
+            <span class="text-sm font-medium text-[var(--neutral-900)] group-hover:text-[var(--brand)] transition-colors">{link.label}</span>
+            <svg class="w-4 h-4 text-[var(--text-muted)] group-hover:translate-x-1 group-hover:text-[var(--brand)] transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</SiteLayout>
+
+<!-- Card mouse-tracking glow -->
+<script>
+  function initCardGlow() {
+    document.querySelectorAll(".card-interactive").forEach((card) => {
+      card.addEventListener("mousemove", (e: Event) => {
+        const event = e as MouseEvent;
+        const rect = (card as HTMLElement).getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 100;
+        const y = ((event.clientY - rect.top) / rect.height) * 100;
+        (card as HTMLElement).style.setProperty("--mouse-x", `${x}%`);
+        (card as HTMLElement).style.setProperty("--mouse-y", `${y}%`);
+      });
+    });
+  }
+  
+  initCardGlow();
+  document.addEventListener("astro:after-swap", initCardGlow);
+</script>

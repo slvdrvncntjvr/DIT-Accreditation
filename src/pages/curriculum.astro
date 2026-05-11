@@ -1,0 +1,61 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { curriculumHighlights } from "../data/content";
+---
+
+<SiteLayout title="BSIT Curriculum">
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold text-[var(--neutral-900)] md:text-4xl tracking-tight">BSIT Curriculum</h1>
+    <p class="mt-3 text-base text-[var(--text-secondary)] max-w-3xl">
+      From foundations through applied tracks to capstone — the program design that 
+      produces industry-ready IT graduates.
+    </p>
+  </div>
+
+  <div class="divider-network"><span class="node"></span></div>
+
+  <!-- Program structure -->
+  <section>
+    <h2 class="section-heading">Program Structure</h2>
+    <div class="mt-5 space-y-3">
+      {
+        curriculumHighlights.map((item, index) => (
+          <article class="card p-5 flex items-start gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--gold-100)] text-sm font-bold text-[var(--gold-600)]">
+              {index + 1}
+            </span>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed pt-1">{item}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- BSIT Journey -->
+  <section class="mt-10">
+    <h2 class="section-heading">The BSIT Journey</h2>
+    <p class="section-subheading">From enrollment to graduate outcomes.</p>
+    <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="card p-5 border-t-3 border-t-[var(--gold-500)]">
+        <p class="text-xs font-bold text-[var(--gold-600)] uppercase tracking-wide">Year 1-2</p>
+        <h3 class="mt-2 text-sm font-semibold text-[var(--neutral-900)]">Foundations</h3>
+        <p class="mt-1 text-xs text-[var(--text-secondary)]">Programming, math, databases, networking fundamentals</p>
+      </div>
+      <div class="card p-5 border-t-3 border-t-[var(--gold-400)]">
+        <p class="text-xs font-bold text-[var(--gold-600)] uppercase tracking-wide">Year 2-3</p>
+        <h3 class="mt-2 text-sm font-semibold text-[var(--neutral-900)]">Applied Tracks</h3>
+        <p class="mt-1 text-xs text-[var(--text-secondary)]">Web dev, software engineering, security, data handling</p>
+      </div>
+      <div class="card p-5 border-t-3 border-t-[var(--maroon-500)]">
+        <p class="text-xs font-bold text-[var(--maroon-600)] uppercase tracking-wide">Year 3-4</p>
+        <h3 class="mt-2 text-sm font-semibold text-[var(--neutral-900)]">Projects & Research</h3>
+        <p class="mt-1 text-xs text-[var(--text-secondary)]">Capstone builds, practicum, and collaborative research</p>
+      </div>
+      <div class="card p-5 border-t-3 border-t-[var(--maroon-600)]">
+        <p class="text-xs font-bold text-[var(--maroon-600)] uppercase tracking-wide">Graduate</p>
+        <h3 class="mt-2 text-sm font-semibold text-[var(--neutral-900)]">Outcomes</h3>
+        <p class="mt-1 text-xs text-[var(--text-secondary)]">Employment, further study, professional certifications</p>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

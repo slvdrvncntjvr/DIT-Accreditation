@@ -1,0 +1,120 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { complianceAreas } from "../../data/content";
+
+export function getStaticPaths() {
+  return complianceAreas.map((label, index) => ({
+    params: { area: `area-${index + 1}` },
+    props: { label, number: index + 1 },
+  }));
+}
+
+interface Props {
+  label: string;
+  number: number;
+}
+
+const { label, number } = Astro.props;
+---
+
+<SiteLayout title={`${label} | Compliance`}>
+  <a href="/compliance" class="inline-flex items-center gap-1 text-sm text-[var(--text-muted)] no-underline hover:text-[var(--brand)] mb-6">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+    </svg>
+    Back to compliance hub
+  </a>
+
+  <div class="mb-8">
+    <div class="flex items-center gap-3 mb-2">
+      <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--maroon-100)] text-sm font-bold text-[var(--maroon-600)]">
+        {String(number).padStart(2, '0')}
+      </span>
+      <span class="badge badge-maroon">Compliance Area</span>
+    </div>
+    <h1 class="text-2xl font-bold text-[var(--neutral-900)] md:text-3xl tracking-tight">{label}</h1>
+    <p class="mt-3 text-base text-[var(--text-secondary)] max-w-3xl">
+      Narrative and evidence links for Area {number}. Documents below are linked to 
+      official verified sources.
+    </p>
+  </div>
+
+  <div class="divider-network"><span class="node"></span></div>
+
+  <!-- Evidence sections -->
+  <div class="grid gap-4 md:grid-cols-2">
+    <section class="card p-6">
+      <h2 class="text-base font-semibold text-[var(--neutral-900)] mb-3">Policies & Guidelines</h2>
+      <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-[var(--gold-500)] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5z" clip-rule="evenodd"/>
+          </svg>
+          <span>Document placeholder — replace with actual policy links</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-[var(--gold-500)] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5z" clip-rule="evenodd"/>
+          </svg>
+          <span>Document placeholder</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card p-6">
+      <h2 class="text-base font-semibold text-[var(--neutral-900)] mb-3">Implementation Records</h2>
+      <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-[var(--gold-500)] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5z" clip-rule="evenodd"/>
+          </svg>
+          <span>Record placeholder — replace with actual evidence links</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-[var(--gold-500)] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5z" clip-rule="evenodd"/>
+          </svg>
+          <span>Record placeholder</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card p-6">
+      <h2 class="text-base font-semibold text-[var(--neutral-900)] mb-3">Assessment & Improvement</h2>
+      <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-[var(--gold-500)] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5z" clip-rule="evenodd"/>
+          </svg>
+          <span>Assessment document placeholder</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card p-6">
+      <h2 class="text-base font-semibold text-[var(--neutral-900)] mb-3">Certified Supporting Documents</h2>
+      <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-[var(--gold-500)] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5z" clip-rule="evenodd"/>
+          </svg>
+          <span>Supporting document placeholder</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Navigation between areas -->
+  <div class="mt-8 flex items-center justify-between">
+    {number > 1 ? (
+      <a href={`/compliance/area-${number - 1}`} class="text-sm font-medium text-[var(--brand)] no-underline hover:underline">
+        ← Previous area
+      </a>
+    ) : <span/>}
+    {number < 10 ? (
+      <a href={`/compliance/area-${number + 1}`} class="text-sm font-medium text-[var(--brand)] no-underline hover:underline">
+        Next area →
+      </a>
+    ) : <span/>}
+  </div>
+</SiteLayout>

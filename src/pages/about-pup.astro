@@ -1,0 +1,117 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout title="About PUP and DIT">
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold text-[var(--neutral-900)] md:text-4xl tracking-tight">About PUP & DIT</h1>
+    <p class="mt-3 text-base text-[var(--text-secondary)] max-w-3xl">
+      The Polytechnic University of the Philippines — the country's #1 polytechnic — 
+      and its Department of Information Technology.
+    </p>
+  </div>
+
+  <!-- Institutional identity -->
+  <section class="card p-6 md:p-8 mb-6">
+    <div class="grid gap-6 md:grid-cols-2">
+      <div>
+        <h2 class="text-xl font-bold text-[var(--neutral-900)]">Polytechnic University of the Philippines</h2>
+        <p class="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">
+          PUP is a state university serving a diverse student population through a mission 
+          anchored on access, excellence, and public service. As the Philippines' premier 
+          polytechnic institution, PUP produces graduates equipped with practical skills 
+          and professional competence for national development.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl font-bold text-[var(--neutral-900)]">Department of Information Technology</h2>
+        <p class="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">
+          Under the College of Computer and Information Sciences (est. 1979), the DIT 
+          delivers the BSIT program — developing capable graduates through outcomes-based 
+          instruction, project-led learning, and collaboration with partner communities 
+          and industry organizations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-network"><span class="node"></span></div>
+
+  <!-- Messages from leadership -->
+  <section>
+    <h2 class="section-heading">Messages</h2>
+    <p class="section-subheading">From the college and department leadership.</p>
+
+    <div class="mt-6 space-y-4">
+      <!-- Dean message -->
+      <article class="card p-6 md:p-8">
+        <div class="flex flex-col sm:flex-row gap-5">
+          <div class="w-16 h-16 rounded-full bg-[var(--maroon-100)] flex items-center justify-center shrink-0">
+            <span class="text-lg font-bold text-[var(--maroon-600)]">D</span>
+          </div>
+          <div class="flex-1">
+            <p class="text-xs font-semibold uppercase tracking-wider text-[var(--gold-600)] mb-1">College Dean</p>
+            <h3 class="text-lg font-bold text-[var(--neutral-900)]">[Dean Name]</h3>
+            <p class="text-sm text-[var(--text-muted)] mb-3">College of Computer and Information Sciences</p>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed italic">
+              "Replace this with the Dean's solidarity message for accreditation. This message 
+              should speak to the program's growth, the college's support, and commitment to 
+              quality assurance and continuous improvement."
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Chair message -->
+      <article class="card p-6 md:p-8">
+        <div class="flex flex-col sm:flex-row gap-5">
+          <div class="w-16 h-16 rounded-full bg-[var(--gold-100)] flex items-center justify-center shrink-0">
+            <span class="text-lg font-bold text-[var(--gold-600)]">C</span>
+          </div>
+          <div class="flex-1">
+            <p class="text-xs font-semibold uppercase tracking-wider text-[var(--gold-600)] mb-1">Program Chair</p>
+            <h3 class="text-lg font-bold text-[var(--neutral-900)]">[Chairperson Name]</h3>
+            <p class="text-sm text-[var(--text-muted)] mb-3">Department of Information Technology</p>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed italic">
+              "Replace this with the Chairperson's message. This should address the program's 
+              journey through accreditation, achievements, and vision for the BSIT program 
+              moving forward."
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Welcome accreditors -->
+  <section class="mt-10">
+    <h2 class="section-heading">Welcome, AACCUP Accreditors</h2>
+    <p class="section-subheading">Our accreditation team for this cycle.</p>
+    <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="card p-5 text-center">
+        <div class="w-14 h-14 mx-auto rounded-full bg-[var(--neutral-200)] flex items-center justify-center mb-3">
+          <span class="text-sm font-bold text-[var(--neutral-600)]">TL</span>
+        </div>
+        <p class="text-sm font-semibold text-[var(--neutral-900)]">[Team Leader Name]</p>
+        <p class="text-xs text-[var(--text-muted)]">Team Leader</p>
+        <p class="text-xs text-[var(--text-muted)]">[University]</p>
+      </div>
+      <div class="card p-5 text-center">
+        <div class="w-14 h-14 mx-auto rounded-full bg-[var(--neutral-200)] flex items-center justify-center mb-3">
+          <span class="text-sm font-bold text-[var(--neutral-600)]">OC</span>
+        </div>
+        <p class="text-sm font-semibold text-[var(--neutral-900)]">[Coordinator Name]</p>
+        <p class="text-xs text-[var(--text-muted)]">Overall Coordinator</p>
+        <p class="text-xs text-[var(--text-muted)]">[University]</p>
+      </div>
+      <div class="card p-5 text-center">
+        <div class="w-14 h-14 mx-auto rounded-full bg-[var(--neutral-200)] flex items-center justify-center mb-3">
+          <span class="text-sm font-bold text-[var(--neutral-600)]">LA</span>
+        </div>
+        <p class="text-sm font-semibold text-[var(--neutral-900)]">[Lead Accreditor Name]</p>
+        <p class="text-xs text-[var(--text-muted)]">Lead Accreditor</p>
+        <p class="text-xs text-[var(--text-muted)]">[University]</p>
+      </div>
+    </div>
+  </section>
+</SiteLayout>
