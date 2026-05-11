@@ -140,6 +140,126 @@ summary:focus-visible,
   border-top: 3px solid var(--gold-500);
 }
 
+/* ===== BENTO TILE VARIANTS ===== */
+
+/* Shared tile base */
+.tile-dark,
+.tile-maroon,
+.tile-gold,
+.tile-white,
+.tile-glass {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.tile-dark:hover,
+.tile-maroon:hover,
+.tile-gold:hover,
+.tile-white:hover,
+.tile-glass:hover {
+  transform: translateY(-4px);
+}
+
+/* ── Dark tile (near-black) ── */
+.tile-dark {
+  background: var(--neutral-950);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tile-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0.04;
+  background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.tile-dark:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* ── Maroon tile ── */
+.tile-maroon {
+  background: var(--maroon-700);
+  border: 1px solid var(--maroon-600);
+}
+
+.tile-maroon:hover {
+  background: var(--maroon-600);
+  box-shadow: 0 8px 40px rgba(148, 21, 24, 0.25);
+}
+
+/* ── Gold tile ── */
+.tile-gold {
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-600));
+  border: 1px solid var(--gold-400);
+  color: white;
+}
+
+.tile-gold:hover {
+  box-shadow: 0 8px 40px rgba(239, 155, 8, 0.3);
+}
+
+/* ── White tile ── */
+.tile-white {
+  background: white;
+  border: 1px solid var(--line);
+}
+
+.tile-white:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06),
+              0 12px 48px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Glass tile (frosted) ── */
+.tile-glass {
+  background: linear-gradient(135deg, var(--neutral-100), white);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+
+.tile-glass:hover {
+  border-color: var(--neutral-400);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06),
+              0 12px 48px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Tile icon styles ── */
+.tile-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a:hover .tile-icon,
+.group:hover .tile-icon {
+  transform: scale(1.12);
+}
+
+.tile-icon-muted {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--neutral-100);
+  transition: background 0.3s ease;
+}
+
 /* ===== Bento grid ===== */
 .bento-grid {
   display: grid;
